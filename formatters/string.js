@@ -214,6 +214,12 @@ function substr (d, begin, end) {
   return d;
 }
 
+function imageSize(d, width, height) {
+  if (width && height) return `${d}:${width}*${height}`;
+  if (width) return `${d}:${width}*${width}`;
+  return d;
+}
+
 /**
  * Pad the string from the start with another string
  *
@@ -300,5 +306,6 @@ module.exports = {
   padl      : padl,
   padr      : padr,
   md5       : md5,
-  prepend   : prepend
+  prepend   : prepend,
+  imageSize: imageSize,
 };
