@@ -19,6 +19,7 @@
   ],
   "scripts": {
     "test": "./node_modules/.bin/mocha test --timeout 100000 --exit",
+    "demo": "node ./examples/index.js",
     "lint": "eslint ./lib/**.js ./test/**.js ./formatters/**.js",
     "lint:fix": "eslint ./lib/**.js ./test/**.js ./formatters/**.js --fix",
     "postpublish": "PACKAGE_VERSION=$(cat package.json | grep \\\"version\\\" | head -1 | awk -F: '{ print $2 }' | sed 's/[\",]//g' | tr -d '[[:space:]]') && git tag $PACKAGE_VERSION && git push origin $PACKAGE_VERSION && git push github-origin $PACKAGE_VERSION"
@@ -27,7 +28,9 @@
     "dayjs": "=1.11.7",
     "dayjs-timezone-iana-plugin": "=0.1.0",
     "debug": "=4.3.4",
+    "image-size": "^1.1.1",
     "which": "=2.0.2",
+    "xml2js": "^0.6.2",
     "yauzl": "=2.10.0",
     "yazl": "=2.5.1"
   },

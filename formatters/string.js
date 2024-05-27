@@ -214,9 +214,61 @@ function substr (d, begin, end) {
   return d;
 }
 
+/**
+ * 转换图片
+ * @param {*} d 
+ * @param {*} width 图片宽度
+ * @param {*} height 图片高度, 不传高度则宽度自动根据比例计算
+ * @returns 
+ */
 function imageSize(d, width, height) {
+  if (!d) return d
   if (width && height) return `${d}:${width}*${height}`;
-  if (width) return `${d}:${width}*${width}`;
+  if (width) return `${d}:${width}`;
+  return d;
+}
+
+/**
+ * 文字颜色转换
+ * @param {*} d 
+ * @param {*} color 
+ * @returns 
+ */
+function fontColor(d, color) {
+  if (color) return `${d}:fontColor(${color})`;
+  return d;
+}
+
+/**
+ * 文字大小转换
+ * @param {*} d 
+ * @param {*} size 
+ * @returns 
+ */
+function fontSize(d, size) {
+  if (size) return `${d}:fontSize(${size})`;
+  return d;
+}
+
+/**
+ * 文字加粗转换
+ * @param {*} d 
+ * @param {*} flag 约定只有传false的时候才不加粗
+ * @returns 
+ */
+function fontBold(d, flag) {
+  if (flag === 'false') return d;
+  return `${d}:fontBold(${flag || ''})`;
+}
+
+/**
+ * 文字字体转换
+ * @param {*} d 
+ * @param {*} size 
+ * @returns 
+ */
+function fontFamily(d, family) {
+  if (family) return `${d}:fontFamily(${family})`;
   return d;
 }
 
@@ -308,4 +360,8 @@ module.exports = {
   md5       : md5,
   prepend   : prepend,
   imageSize: imageSize,
+  fontColor: fontColor,
+  fontSize: fontSize,
+  fontBold: fontBold,
+  fontFamily: fontFamily,
 };

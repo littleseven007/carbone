@@ -1,3 +1,11 @@
+feat:
+
+1. 支持base64图片展示，使用方式 {d.imgUrl:imageSize(100,80)}。只设置宽度的情况下高度等比例自适应
+2. 支持条件删除段落，使用方式{d.imgUrl:ifEM():drop(p)}
+3. 支持局部设置文字 字体fontFamily、颜色fontColor、大小fontSize、加粗fontBold。改文字样式有3种方式：{d.title:fontColor(.titleColor)}、{d.title:fontColor(#FF0000)}、:fontColor({d.titleColor},{d.title})
+4. 支持全局设置文字 字体、大小、加粗。options传入fontOptions对象，只支持fontFamily、fontSize、fontBold
+
+
 <p align="center">
   <a href="https://carbone.io/" target="_blank">
     <img alt="CarboneJS" width="100" src="https://carbone.io/img/carbone_icon_v3_github.png">

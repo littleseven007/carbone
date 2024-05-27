@@ -329,6 +329,20 @@ function ifNIN (d, value) {
 }
 
 /**
+ * 删除一个元素，如果条件为真。
+ * @param {*} d 
+ * @param {*} tag 目前支持p、tbl、tr、tc，够用了
+ * @returns 
+ */
+function drop (d, tag = 'p') {
+  if (this.isConditionTrue === true || this.isConditionTrue === null && d) {
+    this.stopPropagation = true;
+    return `:drop(${tag})`;
+  }
+  return '';
+}
+
+/**
  * Print a message if the condition is true. It should be used with other formatters to print conditional content.
  *
  * @version 2.0.0
@@ -566,6 +580,7 @@ module.exports = {
   hideEnd,
   showBegin,
   showEnd,
+  drop,
   show,
   elseShow,
   and,
