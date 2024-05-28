@@ -9,9 +9,9 @@ feat:
 如果你觉得这个项目有用，你可以给作者买一杯果汁 :tropical_drink:
 If you find this project useful, you can buy author a glass of juice :tropical_drink:
 Alipay
-<img src="/alipay.png" alt="donate" style="zoom: 80%;" />
+<img src="https://777y.cn/images/alipay.png" alt="donate" style="zoom: 80%;" />
 WeChat
-![donate](/wechat.png)
+![donate](https://777y.cn/images/wechat.png)
 
 ## Browsers support
 
