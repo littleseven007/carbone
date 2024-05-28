@@ -4,7 +4,16 @@ feat:
 2. 支持条件删除段落，使用方式{d.imgUrl:ifEM():drop(p)}
 3. 支持局部设置文字 字体fontFamily、颜色fontColor、大小fontSize、加粗fontBold。改文字样式有3种方式：{d.title:fontColor(.titleColor)}、{d.title:fontColor(#FF0000)}、:fontColor({d.titleColor},{d.title})
 4. 支持全局设置文字 字体、大小、加粗。options传入fontOptions对象，只支持fontFamily、fontSize、fontBold
+## Donate
 
+如果你觉得这个项目有用，你可以给作者买一杯果汁 :tropical_drink:
+If you find this project useful, you can buy author a glass of juice :tropical_drink:
+Alipay
+<img src="/alipay.png" alt="donate" style="zoom: 80%;" />
+WeChat
+![donate](/wechat.png)
+
+## Browsers support
 
 <p align="center">
   <a href="https://carbone.io/" target="_blank">
