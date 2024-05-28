@@ -223,8 +223,8 @@ function substr (d, begin, end) {
  */
 function imageSize(d, width, height) {
   if (!d) return d
-  if (width && height) return `${d}:${width}*${height}`;
-  if (width) return `${d}:${width}`;
+  if (width && height) return `:imageSize(${d},${width}*${height})`;
+  if (width) return `:imageSize(${d},${width})`;
   return d;
 }
 
