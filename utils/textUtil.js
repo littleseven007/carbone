@@ -214,8 +214,34 @@ const spaceObject = (data) => {
   }
 };
 
+/**
+ * 目前没发现渲染纯数组的方式
+ * 处理纯数组[1,2]为对象[{value:1},{value:2}]
+ * @param data -需要处理的数据
+ */
+const arrayObject = (data) => {
+  if (data instanceof Array) {
+    if (data.length > 0) {
+      if (data[0] instanceof Object) {
+        data.forEach((item) => {
+          arrayObject(item);
+        });
+      } else {
+        data.forEach((item, index) => {
+          data[index] = { value: item };
+        });
+      }
+    }
+  } else if (data instanceof Object) {
+    Object.keys(data).forEach(function (key) {
+      arrayObject(data[key]);
+    });
+  }
+};
+
 module.exports = {
   putFontStyleToDocument,
   putFontStyleFullToDocument,
   spaceObject,
+  arrayObject,
 };
