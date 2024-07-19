@@ -23,6 +23,10 @@ function dropElementToDocument(report) {
     (file) => file.name.indexOf("word/document.xml") != -1
   );
   let documentXml = report.files[documentIndex].data;
+  /**去掉影响正则匹配的字符串 */
+  const deleteIgnoreRegex =
+    /\s(w14\:(?:paraId|textId)=\")[A-Za-z0-9]{1,10}(\")/g;
+  documentXml = documentXml.replace(deleteIgnoreRegex, "");
   // 匹配是否能找到:drop(val)
   const regex = /\:drop\(.*?\)/;
   let item;
